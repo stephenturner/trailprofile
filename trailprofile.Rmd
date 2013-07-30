@@ -17,11 +17,12 @@ p <- p + scale_x_continuous(limits=c(8, 23)) + scale_y_continuous(limits=c(700,5
 p <- p + labs(title="Charlottesville Area Trail Profiles")
 ```
 
-```{r, echo=F, eval=F}
+```{r, debugging, echo=F, eval=F}
 # A place to debug without showing up in output file.
 str(trailprofile)
 p
-ggsave(filename="trailprofile.png", plot=p)
+knit2html("trailprofile.Rmd")
+system("cat trailprofile.md | sed 's/```r/```/g' > README.md")
 ```
 
 ```{r createtable, results='asis', echo=FALSE}
@@ -31,7 +32,7 @@ cat(apply(trailprofile, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 
 Figure lorem ipsum
 
-```{r fig.width=11, fig.height=11}
+```{r, scatterplot, fig.width=11, fig.height=11}
 print(p)
 ```
 

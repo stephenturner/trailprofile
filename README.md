@@ -3,7 +3,7 @@
 Lorem ipsum Markdown.
 
 
-```R
+```
 library(ggplot2)
 
 trailprofile <- read.csv("trailprofile.csv", header = TRUE, stringsAsFactors = FALSE)
@@ -38,10 +38,10 @@ Three ridges | http://app.strava.com/activities/30484879 | 4313 | 13.7 | 314.82
 Figure lorem ipsum
 
 
-```R
+```
 print(p)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk scatterplot](figure/scatterplot.png) 
 
 

@@ -42,6 +42,6 @@ Figure lorem ipsum
 print(p)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+![plot of chunk scatterplot](figure/scatterplot.png) 
 
 
