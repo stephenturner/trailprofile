@@ -1,8 +1,16 @@
 # Charlottesville Area Trail Profiles
 
-Lorem ipsum Markdown.
+```{r, debugging, echo=F, eval=F}
+# A place to debug without showing up in output file.
+str(trailprofile)
+p
+knit2html("trailprofile.Rmd")
+system("cat trailprofile.md | sed 's/```r/```/g' > README.md")
+```
 
-```{r}
+R code
+
+```{r, datain}
 library(ggplot2)
 
 trailprofile <- read.csv("trailprofile.csv", header=TRUE, stringsAsFactors=FALSE)
@@ -13,17 +21,12 @@ p <- ggplot(data=trailprofile, aes(Distance, Elevation, label=Route)) +
     scale_size(range=c(3,25)) + 
     scale_colour_continuous(low="blue4", high="red2")
 p <- p+geom_text(size=5, angle=45, vjust=2, hjust=.1, colour="gray20")
-p <- p + scale_x_continuous(limits=c(8, 23)) + scale_y_continuous(limits=c(700,5200))
+p <- p + scale_x_continuous(limits=c(8, 23))
+p <- p + scale_y_continuous(limits=c(700,5200))
 p <- p + labs(title="Charlottesville Area Trail Profiles")
 ```
 
-```{r, debugging, echo=F, eval=F}
-# A place to debug without showing up in output file.
-str(trailprofile)
-p
-knit2html("trailprofile.Rmd")
-system("cat trailprofile.md | sed 's/```r/```/g' > README.md")
-```
+Table: 
 
 ```{r createtable, results='asis', echo=FALSE}
 cat("Route | Link | Elevation | Distance | PainNGain", "--- | --- | --- | --- | ---", sep="\n")

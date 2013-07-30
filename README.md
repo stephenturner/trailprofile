@@ -1,6 +1,9 @@
 # Charlottesville Area Trail Profiles
 
-Lorem ipsum Markdown.
+
+
+
+R code
 
 
 ```
@@ -13,14 +16,13 @@ p <- ggplot(data = trailprofile, aes(Distance, Elevation, label = Route)) +
     geom_point(aes(colour = PainNGain, size = PainNGain)) + scale_size(range = c(3, 
     25)) + scale_colour_continuous(low = "blue4", high = "red2")
 p <- p + geom_text(size = 5, angle = 45, vjust = 2, hjust = 0.1, colour = "gray20")
-p <- p + scale_x_continuous(limits = c(8, 23)) + scale_y_continuous(limits = c(700, 
-    5200))
+p <- p + scale_x_continuous(limits = c(8, 23))
+p <- p + scale_y_continuous(limits = c(700, 5200))
 p <- p + labs(title = "Charlottesville Area Trail Profiles")
 ```
 
 
-
-
+Table: 
 
 Route | Link | Elevation | Distance | PainNGain
 --- | --- | --- | --- | ---
