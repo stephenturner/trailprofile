@@ -1,8 +1,6 @@
 # Charlottesville Area Trail Profiles
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring web pages (click the **MD** toolbar button for help on Markdown).
-
-When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+Lorem ipsum Markdown.
 
 ```{r}
 library(ggplot2)
@@ -20,12 +18,18 @@ p <- p + labs(title="Charlottesville Area Trail Profiles")
 ```
 
 ```{r, echo=F, eval=F}
+# A place to debug without showing up in output file.
 str(trailprofile)
 p
 ggsave(filename="trailprofile.png", plot=p)
 ```
 
-Embedded plot
+```{r createtable, results='asis', echo=FALSE}
+cat("Route | Link | Elevation | Distance | PainNGain", "--- | --- | --- | --- | ---", sep="\n")
+cat(apply(trailprofile, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
+```
+
+Figure lorem ipsum
 
 ```{r fig.width=11, fig.height=11}
 print(p)
