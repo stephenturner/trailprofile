@@ -5,7 +5,7 @@
 str(trailprofile)
 p
 knit2html("trailprofile.Rmd")
-system("cat trailprofile.md | sed 's/```r/```/g' > README.md")
+system("cat trailprofile.md | sed 's/```r/```{r}/g' > README.md")
 ```
 
 R code

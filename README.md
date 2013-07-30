@@ -6,7 +6,7 @@
 R code
 
 
-```
+```{r}
 library(ggplot2)
 
 trailprofile <- read.csv("trailprofile.csv", header = TRUE, stringsAsFactors = FALSE)
@@ -40,7 +40,7 @@ Three ridges | http://app.strava.com/activities/30484879 | 4313 | 13.7 | 314.82
 Figure lorem ipsum
 
 
-```
+```{r}
 print(p)
 ```
 
