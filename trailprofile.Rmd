@@ -18,6 +18,12 @@ p <- p + scale_y_continuous(limits=c(700,5200))
 p <- p + labs(title="Charlottesville Area Trail Profiles")
 ```
 
+```{r, debugging, echo=F, eval=F}
+# A place to debug without showing up in output file.
+str(trailprofile)
+p
+```
+
 Table: 
 
 ```{r createtable, results='asis', echo=FALSE}
@@ -31,12 +37,3 @@ Figure lorem ipsum
 print(p)
 ```
 
-```{r, debugging, echo=F, eval=F}
-# A place to debug without showing up in output file.
-str(trailprofile)
-p
-knit2html("trailprofile.Rmd")
-
-#need to trick github flavored markdown using S for the README.md file
-system("cat trailprofile.md | sed 's/```r/```S/g' > README.md")
-```

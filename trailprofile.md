@@ -19,6 +19,9 @@ p <- p + labs(title = "Charlottesville Area Trail Profiles")
 ```
 
 
+
+
+
 Table: 
 
 Route | Link | Elevation | Distance | PainNGain
@@ -42,7 +45,5 @@ print(p)
 ```
 
 ![plot of chunk scatterplot](figure/scatterplot.png) 
-
-
 
 
