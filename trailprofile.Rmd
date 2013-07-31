@@ -1,13 +1,5 @@
 # Charlottesville Area Trail Profiles
 
-```{r, debugging, echo=F, eval=F}
-# A place to debug without showing up in output file.
-str(trailprofile)
-p
-knit2html("trailprofile.Rmd")
-system("cat trailprofile.md | sed 's/```r/```{r}/g' > README.md")
-```
-
 R code
 
 ```{r, datain}
@@ -39,3 +31,12 @@ Figure lorem ipsum
 print(p)
 ```
 
+```{r, debugging, echo=F, eval=F}
+# A place to debug without showing up in output file.
+str(trailprofile)
+p
+knit2html("trailprofile.Rmd")
+
+#need to trick github flavored markdown using S for the README.md file
+system("cat trailprofile.md | sed 's/```r/```S/g' > README.md")
+```

@@ -1,8 +1,5 @@
 # Charlottesville Area Trail Profiles
 
-
-
-
 R code
 
 
@@ -45,5 +42,7 @@ print(p)
 ```
 
 ![plot of chunk scatterplot](figure/scatterplot.png) 
+
+
 
 
