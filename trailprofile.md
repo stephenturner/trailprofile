@@ -22,7 +22,9 @@ p <- p + labs(title = "Charlottesville Area Trail Profiles")
 
 
 
-Table: 
+## Table
+
+Table lorem ipsum: 
 
 Route | Link | Elevation | Distance | PainNGain
 --- | --- | --- | --- | ---
@@ -37,12 +39,9 @@ Turk Gap / Riprap | http://app.strava.com/activities/62558977 | 2921 | 13.5 | 21
 Three ridges | http://app.strava.com/activities/30484879 | 4313 | 13.7 | 314.82
 
 
+## Figure
+
 Figure lorem ipsum
-
-
-```r
-print(p)
-```
 
 ![plot of chunk scatterplot](figure/scatterplot.png) 
 

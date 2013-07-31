@@ -24,16 +24,20 @@ str(trailprofile)
 p
 ```
 
-Table: 
+## Table
+
+Table lorem ipsum: 
 
 ```{r createtable, results='asis', echo=FALSE}
 cat("Route | Link | Elevation | Distance | PainNGain", "--- | --- | --- | --- | ---", sep="\n")
 cat(apply(trailprofile, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 ```
 
+## Figure
+
 Figure lorem ipsum
 
-```{r, scatterplot, fig.width=11, fig.height=11}
+```{r, scatterplot, fig.width=11, fig.height=11, echo=FALSE}
 print(p)
 ```
 
