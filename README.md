@@ -1,6 +1,6 @@
 # Charlottesville Area Trail Profiles
 
-This repo has data and R code for plotting the elevation and distance profiles of some of my favorite trail runs around Charlottesville. If you want to add any to this list, please [email me](http://stephenturner.us/email.html) with the stats, or preferably submit a pull request.
+This repo has data and R code for plotting the elevation and distance profiles of some of my favorite trail runs around Charlottesville. If you want to add any to this list, please [email me](http://stephenturner.us/email.html) with the stats, or preferably submit a [pull request](https://help.github.com/articles/using-pull-requests).
 
 This README was compiled using [knitr](http://yihui.name/knitr/). See the Makefile for details.
 
