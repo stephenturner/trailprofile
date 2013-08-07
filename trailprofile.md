@@ -30,7 +30,7 @@ p <- p + labs(title = "Charlottesville Area Trail Profiles")
 
 ## Data
 
-The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, link, elevation, distance). The "Pain 'n Gain" score is the elevation changed normalized by distance - the higher the number, the more net elevation change per mile on average.
+The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, link, elevation, distance). The *Pain 'n Gain* score is the elevation changed normalized by distance - the higher the number, the more net elevation change per mile on average.
 
 Route | Link | Elevation | Distance | PainNGain
 --- | --- | --- | --- | ---
