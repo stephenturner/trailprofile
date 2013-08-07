@@ -1,6 +1,12 @@
 # Charlottesville Area Trail Profiles
 
-## R code
+This repo has data and R code for plotting the elevation and distance profiles of some of my favorite trail runs around Charlottesville. If you want to add any to this list, please [email me](http://stephenturner.us/email.html) with the stats, or preferably submit a pull request.
+
+This README was compiled using [knitr](http://yihui.name/knitr/). See the Makefile for details.
+
+## Code
+
+This R code reads in the [data](./trailprofile.csv), computes the *Pain 'n Gain* score as the elevation changed normalized by distance (the higher the number, the more net elevation change per mile on average), and creates the plot further below.
 
 ```{r, datain}
 library(ggplot2)
@@ -24,9 +30,9 @@ str(trailprofile)
 p
 ```
 
-## Table
+## Data
 
-Table lorem ipsum: 
+The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, link, elevation, distance). The "Pain 'n Gain" score is the elevation changed normalized by distance - the higher the number, the more net elevation change per mile on average.
 
 ```{r createtable, results='asis', echo=FALSE}
 cat("Route | Link | Elevation | Distance | PainNGain", "--- | --- | --- | --- | ---", sep="\n")
@@ -35,7 +41,7 @@ cat(apply(trailprofile, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 
 ## Figure
 
-Figure lorem ipsum
+The plot shows the elevation change vs. total mileage, with the size and color of the point increasing and becomming redder as the run becomes harder (more elevation change per mile).
 
 ```{r, scatterplot, fig.width=11, fig.height=11, echo=FALSE}
 print(p)
