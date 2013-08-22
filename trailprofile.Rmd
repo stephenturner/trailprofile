@@ -13,7 +13,7 @@ library(ggplot2)
 
 trailprofile <- read.csv("trailprofile.csv", header=TRUE, stringsAsFactors=FALSE)
 trailprofile <- transform(trailprofile, PainNGain=Elevation/Distance)
-trailprofile <- transform(trailprofile, ID=as.integer(gsub("^http://app.strava.com/activities/", "", Link)))
+trailprofile <- transform(trailprofile, ID=as.integer(gsub("^http://www.strava.com/activities/", "", gsub("^http://app.strava.com/activities/", "", Link))))
 trailprofile <- data.frame(ID=trailprofile$ID, trailprofile[ ,-which(names(trailprofile)=="ID")], stringsAsFactors=FALSE)
 
 p <- ggplot(data=trailprofile, aes(Distance, Elevation, label=Route)) + 
@@ -54,6 +54,8 @@ print(p)
 ### Functions to build maps
 
 The R functions below are used to generate [GitHub-compatible maps in geoJSON format](https://help.github.com/articles/mapping-geojson-files-on-github). The `get.strava.data()` function takes a Strava ID and returns a list of components to be parsed by `get.geojson()`. The `populate.geojson.dir()` function takes a vector of Strava IDs, a base directory, and builds maps using the filename convention `<base.dir>/<ID>.geojson`. 
+
+*Important note*: If Strava is configured to create a "privacy zone" around your address, and you start and end at that address, the geoJSON data will be corrupt. Disable privacy zones before building maps starting and/or ending in these zones.
 
 ```{r, mapfunctions, message=FALSE}
 library(RCurl)
@@ -102,7 +104,7 @@ populate.geojson.dir <- function(strava.ids=NULL, base.dir="geojson", rebuild=FA
 }
 
 base.dir <- "geojson"
-populate.geojson.dir(trailprofile$ID, base.dir=base.dir)
+populate.geojson.dir(trailprofile$ID, base.dir=base.dir, rebuild=FALSE)
 ```
 
 ### Display Maps

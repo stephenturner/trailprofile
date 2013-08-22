@@ -14,8 +14,8 @@ library(ggplot2)
 
 trailprofile <- read.csv("trailprofile.csv", header = TRUE, stringsAsFactors = FALSE)
 trailprofile <- transform(trailprofile, PainNGain = Elevation/Distance)
-trailprofile <- transform(trailprofile, ID = as.integer(gsub("^http://app.strava.com/activities/", 
-    "", Link)))
+trailprofile <- transform(trailprofile, ID = as.integer(gsub("^http://www.strava.com/activities/", 
+    "", gsub("^http://app.strava.com/activities/", "", Link))))
 trailprofile <- data.frame(ID = trailprofile$ID, trailprofile[, -which(names(trailprofile) == 
     "ID")], stringsAsFactors = FALSE)
 
@@ -39,7 +39,7 @@ The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, li
 Route | Link | Elevation | Distance | PainNGain
 --- | --- | --- | --- | ---
 Rivanna Trail | http://app.strava.com/activities/32493109 | 1116 | 19.8 |  56.36
-UVA/RT loop w/ Lewis Mtn segment | http://app.strava.com/activities/67987751 |  817 |  8.8 |  92.84
+UVA/RT loop w/ Lewis Mtn segment | http://app.strava.com/activities/67987750 |  813 |  8.7 |  93.45
 Walnut Creek | http://app.strava.com/activities/70205315 | 1412 | 11.7 | 120.68
 Sugar Hollow / Blackrock | http://app.strava.com/activities/56684464 | 2393 | 13.8 | 173.41
 Rockfish to Humpback Rocks parking lot | http://app.strava.com/activities/70913996 | 2898 | 14.4 | 201.25
@@ -61,6 +61,8 @@ The plot shows the elevation change vs. total mileage, with the size and color o
 ### Functions to build maps
 
 The R functions below are used to generate [GitHub-compatible maps in geoJSON format](https://help.github.com/articles/mapping-geojson-files-on-github). The `get.strava.data()` function takes a Strava ID and returns a list of components to be parsed by `get.geojson()`. The `populate.geojson.dir()` function takes a vector of Strava IDs, a base directory, and builds maps using the filename convention `<base.dir>/<ID>.geojson`. 
+
+*Important note*: If Strava is configured to create a "privacy zone" around your address, and you start and end at that address, the geoJSON data will be corrupt. Disable privacy zones before building maps starting and/or ending in these zones.
 
 
 ```S
@@ -112,7 +114,7 @@ populate.geojson.dir <- function(strava.ids = NULL, base.dir = "geojson", rebuil
 }
 
 base.dir <- "geojson"
-populate.geojson.dir(trailprofile$ID, base.dir = base.dir)
+populate.geojson.dir(trailprofile$ID, base.dir = base.dir, rebuild = FALSE)
 ```
 
 
@@ -124,9 +126,9 @@ Clicking any of the links below takes you to the geoJSON map hosted on GitHub.
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/32493109.geojson"></script>
 
-[UVA/RT loop w/ Lewis Mtn segment (67987751)](geojson/67987751.geojson)
+[UVA/RT loop w/ Lewis Mtn segment (67987750)](geojson/67987750.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/67987751.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/67987750.geojson"></script>
 
 [Walnut Creek (70205315)](geojson/70205315.geojson)
 
