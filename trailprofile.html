@@ -296,6 +296,8 @@ p &lt;- p + labs(title = &quot;Charlottesville Area Trail Profiles&quot;)
 
 <h3>Functions to build maps</h3>
 
+<p>The R functions below are used to generate <a href="https://help.github.com/articles/mapping-geojson-files-on-github">GitHub-compatible maps in geoJSON format</a>. The <code>get.strava.data()</code> function takes a Strava ID and returns a list of components to be parsed by <code>get.geojson()</code>. The <code>populate.geojson.dir()</code> function takes a vector of Strava IDs, a base directory, and builds maps using the filename convention <code>&lt;base.dir&gt;/&lt;ID&gt;.geojson</code>. </p>
+
 <pre><code class="r">library(RCurl)
 library(rjson)
 
@@ -349,41 +351,43 @@ populate.geojson.dir(trailprofile$ID, base.dir = base.dir)
 
 <h3>Display Maps</h3>
 
+<p>Clicking any of the links below takes you to the geoJSON map hosted on GitHub.</p>
+
 <p><a href="geojson/32493109.geojson">Rivanna Trail (32493109)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/32493109.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/32493109.geojson"></script>
 
 <p><a href="geojson/67987751.geojson">UVA/RT loop w/ Lewis Mtn segment (67987751)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/67987751.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/67987751.geojson"></script>
 
 <p><a href="geojson/70205315.geojson">Walnut Creek (70205315)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70205315.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/70205315.geojson"></script>
 
 <p><a href="geojson/56684464.geojson">Sugar Hollow / Blackrock (56684464)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/56684464.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/56684464.geojson"></script>
 
 <p><a href="geojson/70913996.geojson">Rockfish to Humpback Rocks parking lot (70913996)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70913996.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/70913996.geojson"></script>
 
 <p><a href="geojson/58992224.geojson">Jarman&#39;s Gap (58992224)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/58992224.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/58992224.geojson"></script>
 
 <p><a href="geojson/28118499.geojson">Jarman&#39;s Gap w/ Turk Mtn Spur (28118499)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/28118499.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/28118499.geojson"></script>
 
 <p><a href="geojson/62558977.geojson">Turk Gap / Riprap (62558977)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/62558977.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/62558977.geojson"></script>
 
 <p><a href="geojson/30484879.geojson">Three ridges (30484879)</a></p>
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/30484879.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/30484879.geojson"></script>
 
 </body>
 

@@ -60,6 +60,8 @@ The plot shows the elevation change vs. total mileage, with the size and color o
 
 ### Functions to build maps
 
+The R functions below are used to generate [GitHub-compatible maps in geoJSON format](https://help.github.com/articles/mapping-geojson-files-on-github). The `get.strava.data()` function takes a Strava ID and returns a list of components to be parsed by `get.geojson()`. The `populate.geojson.dir()` function takes a vector of Strava IDs, a base directory, and builds maps using the filename convention `<base.dir>/<ID>.geojson`. 
+
 
 ```S
 library(RCurl)
@@ -116,39 +118,41 @@ populate.geojson.dir(trailprofile$ID, base.dir = base.dir)
 
 ### Display Maps
 
+Clicking any of the links below takes you to the geoJSON map hosted on GitHub.
+
 [Rivanna Trail (32493109)](geojson/32493109.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/32493109.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/32493109.geojson"></script>
 
 [UVA/RT loop w/ Lewis Mtn segment (67987751)](geojson/67987751.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/67987751.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/67987751.geojson"></script>
 
 [Walnut Creek (70205315)](geojson/70205315.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70205315.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/70205315.geojson"></script>
 
 [Sugar Hollow / Blackrock (56684464)](geojson/56684464.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/56684464.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/56684464.geojson"></script>
 
 [Rockfish to Humpback Rocks parking lot (70913996)](geojson/70913996.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70913996.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/70913996.geojson"></script>
 
 [Jarman's Gap (58992224)](geojson/58992224.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/58992224.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/58992224.geojson"></script>
 
 [Jarman's Gap w/ Turk Mtn Spur (28118499)](geojson/28118499.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/28118499.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/28118499.geojson"></script>
 
 [Turk Gap / Riprap (62558977)](geojson/62558977.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/62558977.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/62558977.geojson"></script>
 
 [Three ridges (30484879)](geojson/30484879.geojson)
 
-<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/30484879.geojson"></script>
+<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/30484879.geojson"></script>
 

@@ -53,6 +53,8 @@ print(p)
 
 ### Functions to build maps
 
+The R functions below are used to generate [GitHub-compatible maps in geoJSON format](https://help.github.com/articles/mapping-geojson-files-on-github). The `get.strava.data()` function takes a Strava ID and returns a list of components to be parsed by `get.geojson()`. The `populate.geojson.dir()` function takes a vector of Strava IDs, a base directory, and builds maps using the filename convention `<base.dir>/<ID>.geojson`. 
+
 ```{r, mapfunctions, message=FALSE}
 library(RCurl)
 library(rjson)
@@ -105,10 +107,12 @@ populate.geojson.dir(trailprofile$ID, base.dir=base.dir)
 
 ### Display Maps
 
+Clicking any of the links below takes you to the geoJSON map hosted on GitHub.
+
 ```{r displaymaps, results='asis', echo=FALSE}
 for (i in 1:nrow(trailprofile)) {
     geojsonfilepath <- paste(base.dir, "/", trailprofile$ID[i], ".geojson", sep="")
     cat("[", trailprofile$Route[i], " (", trailprofile$ID[i], ")](", geojsonfilepath, ")\n\n", sep="")
-    cat('<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/', trailprofile$ID[i], '.geojson"></script>\n\n', sep="")
+    cat('<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/master/geojson/', trailprofile$ID[i], '.geojson"></script>\n\n', sep="")
 }
 ```
