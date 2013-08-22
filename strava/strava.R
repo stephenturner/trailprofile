@@ -17,7 +17,7 @@ get.geojson <- function(strava.data) {
   shell <- "{\"type\": \"FeatureCollection\", \"features\": [{ \"type\": \"Feature\", \"geometry\": {\"type\": \"LineString\", \"coordinates\": [%s]}}]}";
   df <- cbind(do.call(rbind, strava.data$latlng), strava.data$altitude)
   coord.string <- paste(apply(df, 1, function(r) {
-    sprintf("[%s]", paste(r, collapse=","))
+    sprintf("[%s]", paste(c(r[2],r[1],r[3]), collapse=","))
   }), collapse=", ")
   sprintf(shell, coord.string)
 }
