@@ -36,17 +36,17 @@ p <- p + labs(title = "Charlottesville Area Trail Profiles")
 
 The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, link, elevation, distance). The *Pain 'n Gain* score is the elevation changed normalized by distance - the higher the number, the more net elevation change per mile on average.
 
-ID | Route | Link | Elevation | Distance | PainNGain
---- | --- | --- | --- | --- | ---
-32493109 | Rivanna Trail | http://app.strava.com/activities/32493109 | 1116 | 19.8 |  56.36
-67987751 | UVA/RT loop w/ Lewis Mtn segment | http://app.strava.com/activities/67987751 |  817 |  8.8 |  92.84
-70205315 | Walnut Creek | http://app.strava.com/activities/70205315 | 1412 | 11.7 | 120.68
-56684464 | Sugar Hollow / Blackrock | http://app.strava.com/activities/56684464 | 2393 | 13.8 | 173.41
-70913996 | Rockfish to Humpback Rocks parking lot | http://app.strava.com/activities/70913996 | 2898 | 14.4 | 201.25
-58992224 | Jarman's Gap | http://app.strava.com/activities/58992224 | 3449 | 14.4 | 239.51
-28118499 | Jarman's Gap w/ Turk Mtn Spur | http://app.strava.com/activities/28118499 | 4159 | 16.6 | 250.54
-62558977 | Turk Gap / Riprap | http://app.strava.com/activities/62558977 | 2921 | 13.5 | 216.37
-30484879 | Three ridges | http://app.strava.com/activities/30484879 | 4313 | 13.7 | 314.82
+Route | Link | Elevation | Distance | PainNGain
+--- | --- | --- | --- | ---
+Rivanna Trail | http://app.strava.com/activities/32493109 | 1116 | 19.8 |  56.36
+UVA/RT loop w/ Lewis Mtn segment | http://app.strava.com/activities/67987751 |  817 |  8.8 |  92.84
+Walnut Creek | http://app.strava.com/activities/70205315 | 1412 | 11.7 | 120.68
+Sugar Hollow / Blackrock | http://app.strava.com/activities/56684464 | 2393 | 13.8 | 173.41
+Rockfish to Humpback Rocks parking lot | http://app.strava.com/activities/70913996 | 2898 | 14.4 | 201.25
+Jarman's Gap | http://app.strava.com/activities/58992224 | 3449 | 14.4 | 239.51
+Jarman's Gap w/ Turk Mtn Spur | http://app.strava.com/activities/28118499 | 4159 | 16.6 | 250.54
+Turk Gap / Riprap | http://app.strava.com/activities/62558977 | 2921 | 13.5 | 216.37
+Three ridges | http://app.strava.com/activities/30484879 | 4313 | 13.7 | 314.82
 
 
 ## Figure
