@@ -14,11 +14,11 @@ get.strava.data <- function(strava.id) {
 }
 
 get.geojson <- function(strava.data) {
-  shell <- "{\"type\": \"FeatureCollection\", \"features\": [{ \"type\": \"Feature\", \"geometry\": {\"type\": \"LineString\", \"coordinates\": [%s]}}]}";
+  shell <- "{\"type\": \"FeatureCollection\", \"features\": [{ \"type\": \"Feature\", \"geometry\": {\"type\": \"LineString\", \"coordinates\":\n [%s]\n}}]}";
   df <- cbind(do.call(rbind, strava.data$latlng), strava.data$altitude)
   coord.string <- paste(apply(df, 1, function(r) {
     sprintf("[%s]", paste(c(r[2],r[1],r[3]), collapse=","))
-  }), collapse=", ")
+  }), collapse=",\n")
   sprintf(shell, coord.string)
 }
 
