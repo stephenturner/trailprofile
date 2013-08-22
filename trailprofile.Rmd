@@ -53,7 +53,7 @@ print(p)
 
 ### Functions to build maps
 
-```{r, mapfunctions}
+```{r, mapfunctions, message=FALSE}
 library(RCurl)
 library(rjson)
 
@@ -107,8 +107,8 @@ populate.geojson.dir(trailprofile$ID, base.dir=base.dir)
 
 ```{r displaymaps, results='asis', echo=FALSE}
 for (i in 1:nrow(trailprofile)) {
-    cat(trailprofile$ID[i], ": ", trailprofile$Route[i], " (", trailprofile$Link[i], ")\n\n", sep="")
-    cat('<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/', trailprofile$ID[i], '.geojson"></script>', sep="")
-    cat('\n\n')
+    geojsonfilepath <- paste(base.dir, "/", trailprofile$ID[i], ".geojson", sep="")
+    cat("[", trailprofile$Route[i], " (", trailprofile$ID[i], ")](", geojsonfilepath, ")\n\n", sep="")
+    cat('<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/', trailprofile$ID[i], '.geojson"></script>\n\n', sep="")
 }
 ```

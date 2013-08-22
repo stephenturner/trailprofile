@@ -297,12 +297,7 @@ p &lt;- p + labs(title = &quot;Charlottesville Area Trail Profiles&quot;)
 <h3>Functions to build maps</h3>
 
 <pre><code class="r">library(RCurl)
-</code></pre>
-
-<pre><code>## Loading required package: bitops
-</code></pre>
-
-<pre><code class="r">library(rjson)
+library(rjson)
 
 ## Takes strava ID as input (See URL parser) Returns a list with components
 ## (each the same length) to be parsed by get.geojson(): $distance: numeric
@@ -352,56 +347,41 @@ base.dir &lt;- &quot;geojson&quot;
 populate.geojson.dir(trailprofile$ID, base.dir = base.dir)
 </code></pre>
 
-<pre><code>## Skipping geojson/32493109.geojson because it already exists. Add
-## &quot;rebuild=TRUE&quot; to override. Skipping geojson/67987751.geojson because it
-## already exists. Add &quot;rebuild=TRUE&quot; to override. Skipping
-## geojson/70205315.geojson because it already exists. Add &quot;rebuild=TRUE&quot; to
-## override. Skipping geojson/56684464.geojson because it already exists. Add
-## &quot;rebuild=TRUE&quot; to override. Skipping geojson/70913996.geojson because it
-## already exists. Add &quot;rebuild=TRUE&quot; to override. Skipping
-## geojson/58992224.geojson because it already exists. Add &quot;rebuild=TRUE&quot; to
-## override. Skipping geojson/28118499.geojson because it already exists. Add
-## &quot;rebuild=TRUE&quot; to override. Skipping geojson/62558977.geojson because it
-## already exists. Add &quot;rebuild=TRUE&quot; to override. Skipping
-## geojson/30484879.geojson because it already exists. Add &quot;rebuild=TRUE&quot; to
-## override.
-</code></pre>
-
 <h3>Display Maps</h3>
 
-<p>32493109: Rivanna Trail (<a href="http://app.strava.com/activities/32493109">http://app.strava.com/activities/32493109</a>)</p>
+<p><a href="geojson/32493109.geojson">Rivanna Trail (32493109)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/32493109.geojson"></script>
 
-<p>67987751: UVA/RT loop w/ Lewis Mtn segment (<a href="http://app.strava.com/activities/67987751">http://app.strava.com/activities/67987751</a>)</p>
+<p><a href="geojson/67987751.geojson">UVA/RT loop w/ Lewis Mtn segment (67987751)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/67987751.geojson"></script>
 
-<p>70205315: Walnut Creek (<a href="http://app.strava.com/activities/70205315">http://app.strava.com/activities/70205315</a>)</p>
+<p><a href="geojson/70205315.geojson">Walnut Creek (70205315)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70205315.geojson"></script>
 
-<p>56684464: Sugar Hollow / Blackrock (<a href="http://app.strava.com/activities/56684464">http://app.strava.com/activities/56684464</a>)</p>
+<p><a href="geojson/56684464.geojson">Sugar Hollow / Blackrock (56684464)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/56684464.geojson"></script>
 
-<p>70913996: Rockfish to Humpback Rocks parking lot (<a href="http://app.strava.com/activities/70913996">http://app.strava.com/activities/70913996</a>)</p>
+<p><a href="geojson/70913996.geojson">Rockfish to Humpback Rocks parking lot (70913996)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70913996.geojson"></script>
 
-<p>58992224: Jarman&#39;s Gap (<a href="http://app.strava.com/activities/58992224">http://app.strava.com/activities/58992224</a>)</p>
+<p><a href="geojson/58992224.geojson">Jarman&#39;s Gap (58992224)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/58992224.geojson"></script>
 
-<p>28118499: Jarman&#39;s Gap w/ Turk Mtn Spur (<a href="http://app.strava.com/activities/28118499">http://app.strava.com/activities/28118499</a>)</p>
+<p><a href="geojson/28118499.geojson">Jarman&#39;s Gap w/ Turk Mtn Spur (28118499)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/28118499.geojson"></script>
 
-<p>62558977: Turk Gap / Riprap (<a href="http://app.strava.com/activities/62558977">http://app.strava.com/activities/62558977</a>)</p>
+<p><a href="geojson/62558977.geojson">Turk Gap / Riprap (62558977)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/62558977.geojson"></script>
 
-<p>30484879: Three ridges (<a href="http://app.strava.com/activities/30484879">http://app.strava.com/activities/30484879</a>)</p>
+<p><a href="geojson/30484879.geojson">Three ridges (30484879)</a></p>
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/30484879.geojson"></script>
 

@@ -63,13 +63,6 @@ The plot shows the elevation change vs. total mileage, with the size and color o
 
 ```r
 library(RCurl)
-```
-
-```
-## Loading required package: bitops
-```
-
-```r
 library(rjson)
 
 ## Takes strava ID as input (See URL parser) Returns a list with components
@@ -120,58 +113,42 @@ base.dir <- "geojson"
 populate.geojson.dir(trailprofile$ID, base.dir = base.dir)
 ```
 
-```
-## Skipping geojson/32493109.geojson because it already exists. Add
-## "rebuild=TRUE" to override. Skipping geojson/67987751.geojson because it
-## already exists. Add "rebuild=TRUE" to override. Skipping
-## geojson/70205315.geojson because it already exists. Add "rebuild=TRUE" to
-## override. Skipping geojson/56684464.geojson because it already exists. Add
-## "rebuild=TRUE" to override. Skipping geojson/70913996.geojson because it
-## already exists. Add "rebuild=TRUE" to override. Skipping
-## geojson/58992224.geojson because it already exists. Add "rebuild=TRUE" to
-## override. Skipping geojson/28118499.geojson because it already exists. Add
-## "rebuild=TRUE" to override. Skipping geojson/62558977.geojson because it
-## already exists. Add "rebuild=TRUE" to override. Skipping
-## geojson/30484879.geojson because it already exists. Add "rebuild=TRUE" to
-## override.
-```
-
 
 ### Display Maps
 
-32493109: Rivanna Trail (http://app.strava.com/activities/32493109)
+[Rivanna Trail (32493109)](geojson/32493109.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/32493109.geojson"></script>
 
-67987751: UVA/RT loop w/ Lewis Mtn segment (http://app.strava.com/activities/67987751)
+[UVA/RT loop w/ Lewis Mtn segment (67987751)](geojson/67987751.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/67987751.geojson"></script>
 
-70205315: Walnut Creek (http://app.strava.com/activities/70205315)
+[Walnut Creek (70205315)](geojson/70205315.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70205315.geojson"></script>
 
-56684464: Sugar Hollow / Blackrock (http://app.strava.com/activities/56684464)
+[Sugar Hollow / Blackrock (56684464)](geojson/56684464.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/56684464.geojson"></script>
 
-70913996: Rockfish to Humpback Rocks parking lot (http://app.strava.com/activities/70913996)
+[Rockfish to Humpback Rocks parking lot (70913996)](geojson/70913996.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/70913996.geojson"></script>
 
-58992224: Jarman's Gap (http://app.strava.com/activities/58992224)
+[Jarman's Gap (58992224)](geojson/58992224.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/58992224.geojson"></script>
 
-28118499: Jarman's Gap w/ Turk Mtn Spur (http://app.strava.com/activities/28118499)
+[Jarman's Gap w/ Turk Mtn Spur (28118499)](geojson/28118499.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/28118499.geojson"></script>
 
-62558977: Turk Gap / Riprap (http://app.strava.com/activities/62558977)
+[Turk Gap / Riprap (62558977)](geojson/62558977.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/62558977.geojson"></script>
 
-30484879: Three ridges (http://app.strava.com/activities/30484879)
+[Three ridges (30484879)](geojson/30484879.geojson)
 
 <script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/30484879.geojson"></script>
 
