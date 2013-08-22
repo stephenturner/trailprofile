@@ -13,6 +13,8 @@ library(ggplot2)
 
 trailprofile <- read.csv("trailprofile.csv", header=TRUE, stringsAsFactors=FALSE)
 trailprofile <- transform(trailprofile, PainNGain=Elevation/Distance)
+trailprofile <- transform(trailprofile, ID=as.integer(gsub("^http://app.strava.com/activities/", "", Link)))
+trailprofile <- data.frame(ID=trailprofile$ID, trailprofile[ ,-which(names(trailprofile)=="ID")], stringsAsFactors=FALSE)
 
 p <- ggplot(data=trailprofile, aes(Distance, Elevation, label=Route)) + 
     geom_point(aes(colour=PainNGain, size=PainNGain)) + 
@@ -35,7 +37,7 @@ p
 The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, link, elevation, distance). The *Pain 'n Gain* score is the elevation changed normalized by distance - the higher the number, the more net elevation change per mile on average.
 
 ```{r createtable, results='asis', echo=FALSE}
-cat("Route | Link | Elevation | Distance | PainNGain", "--- | --- | --- | --- | ---", sep="\n")
+cat("ID | Route | Link | Elevation | Distance | PainNGain", "--- | --- | --- | --- | ---", sep="\n")
 cat(apply(trailprofile, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 ```
 
@@ -47,3 +49,66 @@ The plot shows the elevation change vs. total mileage, with the size and color o
 print(p)
 ```
 
+## Maps
+
+### Functions to build maps
+
+```{r, mapfunctions}
+library(RCurl)
+library(rjson)
+
+## Takes strava ID as input (See URL parser)
+## Returns a list with components (each the same length) to be parsed by get.geojson(): 
+#    $distance: numeric vector
+#    $altitude: numeric vector
+#    $latlng: a list of numeric vectors of length 2
+get.strava.data <- function(strava.id) {
+  url <- sprintf("http://app.strava.com/stream/%s?streams[]=latlng,distance,altitude", strava.id)
+  strava.json <- getURL(url)
+  parser <- newJSONParser()
+  parser$addData(strava.json)
+  parser$getObject() # slow
+}
+
+## Parse strava data to github-flavored geojson
+get.geojson <- function(strava.data) {
+  shell <- "{\"type\": \"FeatureCollection\", \"features\": [{ \"type\": \"Feature\", \"geometry\": {\"type\": \"LineString\", \"coordinates\":\n [%s]\n}}]}";
+  df <- cbind(do.call(rbind, strava.data$latlng), strava.data$altitude)
+  coord.string <- paste(apply(df, 1, function(r) {
+    sprintf("[%s]", paste(c(r[2],r[1],r[3]), collapse=","))
+  }), collapse=",\n")
+  sprintf(shell, coord.string)
+}
+
+## Function to loop through vector of Strava IDs and create 'ID.geojson' file in a base directory
+## that will be created if it doesn't already exist. Add option rebuild=TRUE to force rebuild
+## existing geojson files.
+populate.geojson.dir <- function(strava.ids=NULL, base.dir="geojson", rebuild=FALSE) {
+    if (!file.exists(base.dir)) dir.create(base.dir) # create geojson directory if it doesn't exist
+    if (!file.info(base.dir)$isdir) stop("Target location exists, but is not a directory")
+    for (id in strava.ids) {
+        filename <- file.path(base.dir, paste(id, "geojson", sep="."))
+        if (!file.exists(filename) | rebuild) {
+            message(paste('Processing strava ID', id, "into path:", filename))
+            sink(filename) # write to file
+            cat(get.geojson(get.strava.data(id)))
+            sink(NULL)
+        }   else {
+            message(paste('Skipping', filename, 'because it already exists. Add "rebuild=TRUE" to override.'))
+        }
+    }
+}
+
+base.dir <- "geojson"
+populate.geojson.dir(trailprofile$ID, base.dir=base.dir)
+```
+
+### Display Maps
+
+```{r displaymaps, results='asis', echo=FALSE}
+for (i in 1:nrow(trailprofile)) {
+    cat(trailprofile$ID[i], ": ", trailprofile$Route[i], " (", trailprofile$Link[i], ")\n\n", sep="")
+    cat('<script src="https://embed.github.com/view/geojson/stephenturner/trailprofile/jsonrmd/geojson/', trailprofile$ID[i], '.geojson"></script>', sep="")
+    cat('\n\n')
+}
+```
