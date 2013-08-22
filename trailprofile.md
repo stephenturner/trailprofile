@@ -37,7 +37,7 @@ p <- p + labs(title = "Charlottesville Area Trail Profiles")
 The file [trailprofile.csv](./trailprofile.csv) has the raw data (route name, link, elevation, distance). The *Pain 'n Gain* score is the elevation changed normalized by distance - the higher the number, the more net elevation change per mile on average.
 
 ID | Route | Link | Elevation | Distance | PainNGain
---- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | ---
 32493109 | Rivanna Trail | http://app.strava.com/activities/32493109 | 1116 | 19.8 |  56.36
 67987751 | UVA/RT loop w/ Lewis Mtn segment | http://app.strava.com/activities/67987751 |  817 |  8.8 |  92.84
 70205315 | Walnut Creek | http://app.strava.com/activities/70205315 | 1412 | 11.7 | 120.68
