@@ -51,7 +51,7 @@ Three ridges | http://app.strava.com/activities/30484879 | 4313 | 13.7 | 314.82
 
 ## Figure
 
-The plot shows the elevation change vs. total mileage, with the size and color of the point increasing and becomming redder as the run becomes harder (more elevation change per mile).
+The plot shows the elevation change vs. total mileage, with the size and color of the point increasing and becoming redder as the run becomes harder (more elevation change per mile).
 
 ![plot of chunk scatterplot](figure/scatterplot.png) 
 
